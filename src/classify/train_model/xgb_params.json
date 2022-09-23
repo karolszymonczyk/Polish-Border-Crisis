@@ -1,0 +1,8 @@
+{
+  "max_depth": 50,
+  "eta": 0.1,
+  "objective": "multi:softprob",
+  "nthread": 8,
+  "eval_metric": "auc",
+  "num_class": 3
+}

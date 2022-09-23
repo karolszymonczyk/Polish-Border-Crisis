@@ -1,0 +1,38 @@
+version: "3.7"
+
+services:
+  scraper:
+    image: scraper
+    container_name: scraper
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    tty: true
+    command: python ./scraper/scraper.py
+    depends_on:
+      - torproxy
+      - mongodb
+
+  torproxy:
+    image: dperson/torproxy
+    container_name: torproxy
+    ports:
+      - 9050:9050
+      - 9051:9051
+    environment:
+      - PASSWORD=${TORPROXY_PASSWORD}
+    restart: always
+
+  # for local mongo database
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb
+    ports:
+      - 27018:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_LOCAL_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_LOCAL_PASSWORD}
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data

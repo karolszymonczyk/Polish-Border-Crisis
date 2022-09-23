@@ -6,8 +6,8 @@
 
 All the source code is located in the `src/` directory. Inside there are a bunch of subdirectories containing the code for different stages of the project:
 
-- `src/scraper/` - the web scraper written using the [stweet](https://github.com/markowanga/stweet) library
-- `src/data-processing/` - downloading the dataset from the database and sampling the data
-- `src/annotate_test/` - calculating the annotators agreement
-- `src/classify/` - implementation of different classifiers
-- `src/data-analysis` - analysis of the results
+- `src/scraper/` - twitter scraper developed using the [stweet](https://github.com/markowanga/stweet) library
+- `src/data_processing/` - processing of the raw tweets data from database
+- `src/annotate_test/` - annotators agreement calculations
+- `src/classify/` - data classyfication based on sample annotations using different classifiers
+- `src/data_analysis` - results analysis

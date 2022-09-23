@@ -1,0 +1,13 @@
+*__pycache__
+*.ipynb_checkpoints
+*.DS_Store
+.vscode
+.env
+
+/data
+/datasets
+/models
+/src/data
+/src/classify/train_model/logs
+/src/ssl
+notes
