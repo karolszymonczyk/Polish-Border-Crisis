@@ -6,6 +6,12 @@
 
 All the source code is located in the `src/` directory. Inside there are a bunch of subdirectories containing the code for different stages of the project:
 
+## Install requirements
+Requirements are separted into task specyfic directories. In order to install requirements run command in directory:
+```shell
+pip install -r requirements.txt
+```
+
 ### Scraper
 Twitter scraper developed using the [stweet](https://github.com/markowanga/stweet) library is located in `src/scraper/` directory.
   
