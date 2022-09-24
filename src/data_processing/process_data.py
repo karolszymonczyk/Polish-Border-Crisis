@@ -12,15 +12,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Parse emojis into text, save it in a new column and export."
     )
-    parser.add_argument("--input_file", type=str, default="../../data/raw_tweets.jl")
+    parser.add_argument("--in_file", type=str, default="../../data/raw_tweets.jl")
     parser.add_argument("--out_dir", type=str, default="../../data/")
-    parser.add_argument("--text-col", type=str, default="full_text")
-    parser.add_argument("--new-col", type=str, default="clean_text")
+    parser.add_argument("--text_col", type=str, default="full_text")
+    parser.add_argument("--new_col", type=str, default="clean_text")
     parser.add_argument("--filetype", type=str, choices=["jl", "tsv"], default="jl")
 
     args = parser.parse_args()
 
-    df = pd.read_json(args.input_file, lines=True, dtype=False)
+    df = pd.read_json(args.in_file, lines=True, dtype=False)
 
     print("Demojifying tweets...")
     demoji_df = demojify(df, args.text_col, args.new_col)
